@@ -15,15 +15,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def xarray(N: int) -> np.ndarray:
+    '''Array with x values'''
     return np.linspace(0., 2.*np.pi, N, endpoint=False)
 
 def gx(x: np.ndarray) -> np.ndarray:
-    return 3.*np.sin(2.*x)+2.*np.cos(5.*x) # array with g(x)
+    '''Gives np array with g(x) values'''
+    return 3.*np.sin(2.*x)+2.*np.cos(5.*x)
 
 # a)
 N1 = 100 # number of data points
 N2 = 50
-x1 = xarray(N1) # array with x values
+x1 = xarray(N1)
 x2 = xarray(N2)
 
 # b)
