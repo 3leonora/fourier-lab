@@ -66,7 +66,7 @@ plt.plot(np.imag(Fft2),'o', color='b') # Plot imaginary part of Fft vs looping i
 plt.legend()
 plt.show()
 
-# e) If T1=0.1?
+# e) If T1=0.1, what happens then?
 
 # f) Correction of sample time
 ny_max1 = N/(2.*(T11-T0))
