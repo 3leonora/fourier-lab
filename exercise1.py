@@ -9,7 +9,7 @@ Authors:
 @Eleonora Svanberg
 @Henrik Jörnling
 '''
-
+#hej
 #Modules
 import numpy as np
 import matplotlib.pyplot as plt
