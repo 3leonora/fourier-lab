@@ -45,9 +45,18 @@ print(f'Size of Fgx1 (N={N1}): {len(Fgx1)}')
 print(f'Size of Fgx2 (N={N2}): {len(Fgx2)}')
 
 # e)
+print(f'c_2={Fgx1[2]:.1f}') #c_2=0.0-150.0j, c_2*N
+print(f'c_5={Fgx1[5]:.1f}') #c_5=100.0+0.0j, c_5*N
 plt.plot(np.real(Fgx1),'o', color='g', label=f'N={N1}') # Plot real part of Fgx vs looping index 
-plt.plot(np.imag(Fgx1),'o', color='g') # Plot imaginary part of Fgx vs looping index
-plt.plot(np.real(Fgx2),'o', color='r', label=f'N={N2}')
-plt.plot(np.imag(Fgx2),'o', color='r')
+plt.plot(np.imag(Fgx1),'o', color='r') # Plot imaginary part of Fgx vs looping index
+plt.plot(np.real(Fgx2),'x', color='g', label=f'N={N2}')
+plt.plot(np.imag(Fgx2),'x', color='r')
+plt.title('Complex Fourier')
+plt.legend()
+plt.show()
+
+plt.plot([2*z/N1 for z in np.real(Fgx1)],'o', color='g', label='a') # Plot real part of Fgx vs looping index 
+plt.plot([-2*z/N1 for z in np.imag(Fgx1)],'o', color='r', label='b') # Plot imaginary part of Fgx vs looping index
+plt.title(f'Real Forier (N={N1})')
 plt.legend()
 plt.show()
