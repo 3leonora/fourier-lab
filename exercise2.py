@@ -64,16 +64,19 @@ plt.plot(np.real(Fft2),'x', color='g', label='ft2') # Plot real part of Fft vs l
 plt.plot(np.imag(Fft2),'x', color='r') # Plot imaginary part of Fft vs looping index 
 plt.legend()
 plt.show()
+print(f'Fft1_1 (T1={T11}) = {Fft1[1]:.1f}')
+print(f'Fft2_1 (T1={T12}) = {Fft2[2]:.1f}')
 
 # e) If T1=0.1, what happens then?
+# Directly proportional to time b_n != 0 -> b_2n !=0
 
 # f) Correction of sample time
 N = 1024
 T0 = 0.0
-ny_max1 = N/(2*(T11-T0))
-ny_max2 = N/(2*(T12-T0))
-frek1 = np.linspace(0, ny_max1, N/2+1, endpoint=True)
-frek2 = np.linspace(0, ny_max2, N/2+1, endpoint=True)
+ny_max1 = N/(2.*(T11-T0))
+ny_max2 = N/(2.*(T12-T0))
+frek1 = np.linspace(0, ny_max1,int((N/2)+1), endpoint=True)
+frek2 = np.linspace(0, ny_max2, int((N/2)+1), endpoint=True)
 plt.plot(frek1,np.real(Fft1),'o', color='g', label='ft1') # Plot real part of Fft vs frek 
 plt.plot(frek1,np.imag(Fft1),'o', color='r') # Plot imaginary part of Fft vs frek 
 plt.plot(frek2,np.real(Fft2),'x', color='g', label='ft2')
