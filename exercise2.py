@@ -51,6 +51,8 @@ print(f'T={T} s')
 
 # c) Plot graph
 plt.plot(t1, ft1, label='ft1') # plot signal f(t) vs t
+plt.legend()
+plt.show()
 plt.plot(t2, ft2, label='ft2')
 plt.legend()
 plt.show()
@@ -62,9 +64,10 @@ plt.plot(np.imag(Fft1),'o', color='r') # Plot imaginary part of Fft vs looping i
 Fft2 = np.fft.rfft(ft2) # Fouriertransform F(f) of real signal f(t)
 plt.plot(np.real(Fft2),'x', color='g', label='ft2') # Plot real part of Fft vs looping index 
 plt.plot(np.imag(Fft2),'x', color='r') # Plot imaginary part of Fft vs looping index 
+plt.title('FFT of signal (green-real red-imag)')
 plt.legend()
 plt.show()
-print(f'Fft1_1 (T1={T11}) = {Fft1[1]:.1f}')
+print(f'Fft1_1 (T1={T11}) = {Fft1[1]:.1f} and omega={omega}')
 print(f'Fft2_1 (T1={T12}) = {Fft2[2]:.1f}')
 
 # e) If T1=0.1, what happens then?
@@ -81,5 +84,20 @@ plt.plot(frek1,np.real(Fft1),'o', color='g', label='ft1') # Plot real part of Ff
 plt.plot(frek1,np.imag(Fft1),'o', color='r') # Plot imaginary part of Fft vs frek 
 plt.plot(frek2,np.real(Fft2),'x', color='g', label='ft2')
 plt.plot(frek2,np.imag(Fft2),'x', color='r') 
+plt.title('Correction of signal (green-real red-imag)')
 plt.legend()
+plt.show()
+
+plt.subplot(2, 1, 1)
+plt.plot(t1, np.sin(2*np.pi*frek1[0]*t1), color='r', label='0 Hz')
+plt.plot(t1, np.sin(2*np.pi*frek1[1]*t1), color='b', label='20 Hz')
+plt.legend()
+plt.subplot(2, 1, 2)
+plt.plot(t1, ft1, label='2c)') # plot signal f(t) vs t
+plt.legend()
+plt.show()
+
+#g)
+ft_tillbaka = np.fft.irfft(Fft1) # Transform back
+plt.plot(t1, ft_tillbaka, color='b', label='20 Hz')
 plt.show()
