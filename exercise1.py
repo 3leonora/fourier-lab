@@ -51,12 +51,12 @@ plt.plot(np.real(Fgx1),'o', color='g', label=f'N={N1}') # Plot real part of Fgx 
 plt.plot(np.imag(Fgx1),'o', color='r') # Plot imaginary part of Fgx vs looping index
 plt.plot(np.real(Fgx2),'x', color='g', label=f'N={N2}')
 plt.plot(np.imag(Fgx2),'x', color='r')
-plt.title('Complex Fourier')
+plt.title('Complex Fourier (green-real, red-imag)')
 plt.legend()
 plt.show()
 
 plt.plot([2*z/N1 for z in np.real(Fgx1)],'o', color='g', label='a') # Plot real part of Fgx vs looping index 
 plt.plot([-2*z/N1 for z in np.imag(Fgx1)],'o', color='r', label='b') # Plot imaginary part of Fgx vs looping index
-plt.title(f'Real Forier (N={N1})')
+plt.title(f'Real Fourier (N={N1})')
 plt.legend()
 plt.show()
