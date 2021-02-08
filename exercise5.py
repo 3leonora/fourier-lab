@@ -1,7 +1,7 @@
 '''
-Exercise 4
+Exercise 5
 
-Fourier Transform of different frequences
+Fourier Transform of non-integer frequencies
 
 Dependencies: numpy, matplotlib
 
@@ -19,7 +19,7 @@ def f(t: np.ndarray, omega) -> np.ndarray:
 
 def sample(T1:int) -> np.ndarray:
     '''
-    Returns a data sample by given time
+    Gives a data point sample 
     '''
     N = 1024 # number of data points
     T0 = 0.0 # start of sample [s]
@@ -35,15 +35,20 @@ def sample(T1:int) -> np.ndarray:
 
 T1 = 1.0
 t = sample(T1)
-vlist = [400, 510, 514, 1000, 2000]
-clist = ['g', 'r', 'b', 'k', 'yellow']
+ny1 = 100.4 # angular frequency [rad]
+omega1 = 2*np.pi*ny1
+ny2 = 100
+omega2 = 2*np.pi*ny2
+ft1 = f(t, omega1) # signal f(t)
+ft2 = f(t, omega2) # signal f(t)
+Fft1 = np.fft.rfft(ft1) # Fouriertransform F(f) of real signal f(t)
+Fft2 = np.fft.rfft(ft2) # Fouriertransform F(f) of real signal f(t)
 
-for ny in vlist:
-    omega = 2*np.pi*ny # angular frequency [rad]
-    ft = f(t, omega) # signal f(t)
-    Fft = np.fft.rfft(ft) # Fouriertransform F(f) of real signal f(t)
-    plt.plot(abs(Fft), color=clist[vlist.index(ny)], label=f'{ny} Hz') # Plot real part of Fft vs looping index 
-    plt.legend()
-    #plt.show()
-
+plt.subplot(121)
+plt.plot(abs(Fft1), color='r', label=f'{ny1} Hz') # Plot real part of Fft vs looping index 
+plt.legend()
+plt.subplot(122)
+plt.plot(abs(Fft2), color='b', label=f'{ny2} Hz') # Plot real part of Fft vs looping index 
+plt.legend()
+plt.suptitle(f'{ny1} Hz vs {ny2} Hz')
 plt.show()

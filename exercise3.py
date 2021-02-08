@@ -19,7 +19,7 @@ def f(t: np.ndarray, omega) -> np.ndarray:
 
 def sample(T1:int) -> np.ndarray:
     '''
-
+    Returns a data sample by given time
     '''
     N = 1024 # number of data points
     T0 = 0.0 # start of sample [s]
