@@ -47,4 +47,3 @@ for ny in vlist:
     #plt.show()
 
 plt.show()
-
