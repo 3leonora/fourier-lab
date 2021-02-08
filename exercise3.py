@@ -46,4 +46,3 @@ plt.plot(np.real(Fft),'o', color='g', label='real') # Plot real part of Fft vs l
 plt.plot(np.imag(Fft),'o', color='r', label='imag') # Plot imaginary part of Fft vs looping index 
 plt.legend()
 plt.show()
-plt.plot()
