@@ -1,7 +1,7 @@
 '''
 Exercise 3
 
-Quadrate
+Fourier Transform of the square of f(t)
 
 Dependencies: numpy, matplotlib
 
@@ -41,7 +41,7 @@ omega = 2*np.pi*ny # angular frequency [rad]
 ft = f(t, omega) # signal f(t)
 ft2 = ft**2
 Fft = np.fft.rfft(ft2) # Fouriertransform F(f) of real signal f(t)
-print(f'n=0: {np.real(Fft[0])} n=2: {np.real(Fft[2])}')
+print(f'n=0 -> 0 Hz, n=2 -> 40 Hz')
 plt.plot(np.real(Fft),'o', color='g', label='real') # Plot real part of Fft vs looping index 
 plt.plot(np.imag(Fft),'o', color='r', label='imag') # Plot imaginary part of Fft vs looping index 
 plt.legend()
