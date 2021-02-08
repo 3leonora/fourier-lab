@@ -1,7 +1,7 @@
 '''
 Exercise 2
 
-Fouriertransform of function with a period of T
+Fouriertransform of function with a period of T (20 Hz)
 
 Dependencies: numpy, matplotlib
 
